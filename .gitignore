@@ -1,0 +1,5 @@
+gui/package-lock\.json
+gui/node_modules
+gui/\.DS_Store
+
+\.DS_Store

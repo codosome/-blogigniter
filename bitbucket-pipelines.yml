@@ -1,0 +1,14 @@
+image: node:6.9.0
+pipelines:
+  branches:
+    dev:
+      - step:
+         script:
+           - cd ./gui
+           - printf "//`node -p \"require('url').parse(process.env.NPM_REGISTRY_URL || 'https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
+           - npm install
+           - npm run build
+           - tar -zcvf deployment.tar.gz build/*
+           - ssh devgxg@dev.globalexpeditionsgroup.com "mkdir -p ~/www/bloginator_dev; cd ~/www/bloginator_dev/; rm -rf *"
+           - scp -r deployment.tar.gz devgxg@dev.globalexpeditionsgroup.com:~/www/bloginator_dev
+           - ssh devgxg@dev.globalexpeditionsgroup.com "cd ~/www/bloginator_dev/; tar -zxvf ~/www/bloginator_dev/deployment.tar.gz; mv ~/www/bloginator_dev/build/* ~/www/bloginator_dev/; rm -rf ~/www/bloginator_dev/build/; rm ~/www/bloginator_dev/deployment.tar.gz"

@@ -1,0 +1,37 @@
+{
+  "name": "gxg4",
+  "version": "4.2.6",
+  "private": true,
+  "homepage": "./",
+  "dependencies": {
+    "@date-io/date-fns": "0.0.2",
+    "@material-ui/core": "^3.5.1",
+    "@material-ui/icons": "^3.0.1",
+    "axios": "^0.18.0",
+    "date-fns": "^2.0.0-alpha.16",
+    "file-saver": "^2.0.0",
+    "jszip": "^3.1.5",
+    "jxon": "^2.0.0-beta.5",
+    "localforage": "^1.7.1",
+    "material-ui-pickers": "^2.0.2",
+    "mime": "^2.3.1",
+    "mui-datatables": "^2.0.0-beta-39",
+    "react": "^16.4.0",
+    "react-add-to-homescreen": "^1.1.0",
+    "react-dom": "^16.4.0",
+    "react-responsive-carousel": "^3.1.41",
+    "react-scripts": "^1.1.5",
+    "react-select": "^2.1.0",
+    "uuid": "^3.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "set \"CI=false\" && GENERATE_SOURCEMAP=false react-scripts build && sw-precache --config=sw-precache-config.js",
+    "analyze": "react-scripts build && source-map-explorer build/static/js/main.*",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "source-map-explorer": "^1.6.0"
+  }
+}

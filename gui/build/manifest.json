@@ -1,0 +1,20 @@
+{
+  "short_name": "Bloginator",
+  "name": "Bloginator",
+  "icons": [
+    {
+      "src": "./img/icon-128.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./img/icon-128.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "theme_color": "#FFFFFF"
+}
